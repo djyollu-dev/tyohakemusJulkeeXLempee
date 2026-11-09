@@ -1,11 +1,12 @@
 :root {
-  --bg: #000;
-  --card-1: rgb(20, 20, 20);
-  --card-2: rgb(31, 31, 31);
-  --text: #fff;
-  --muted: #c9c9c9;
-  --accent: salmon;
-  --accent-2: orange;
+  --bg: #0b0220;
+  --card-1: #1a0b3b;
+  --card-2: #2a1259;
+  --text: #ffffff;
+  --muted: #dccff5;
+  --accent: #ff2e97; /* neonpinkki */
+  --accent-2: #00e5ff; /* syaani */
+  --glow: rgba(255, 46, 151, 0.45);
   --font-display: 'Sixtyfour', monospace;
   --font-body: 'Jersey 10', 'Ubuntu', sans-serif;
 }
@@ -38,7 +39,7 @@ body {
   color: #000;
   font-family: var(--font-display);
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 2px;
   z-index: 10;
 }
 .skip-link:focus {
@@ -90,7 +91,9 @@ a:focus-visible {
 
 .title {
   background: linear-gradient(0deg, var(--card-1) 0%, var(--card-2) 70%);
-  border-radius: 10px;
+  border: 1px solid var(--accent-2);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+  border-radius: 2px;
   width: 100%;
   max-width: 450px;
   min-height: 100px;
@@ -109,7 +112,8 @@ a:focus-visible {
   justify-content: space-around;
   gap: 0.5rem;
   background: var(--card-1);
-  border-radius: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
 }
 
 .nav a,
@@ -118,7 +122,8 @@ a:focus-visible {
   justify-content: center;
   min-width: 130px;
   padding: 0.6rem 1.25rem;
-  background: var(--card-1);
+  background: var(--card-2);
+  border: 1px solid var(--accent);
   border-radius: 10px;
   color: var(--text);
   text-decoration: none;
@@ -141,8 +146,10 @@ main {
 }
 
 .card {
-  background: linear-gradient(180deg, var(--card-1) 0%, var(--card-2) 50%);
-  border-radius: 10px;
+  background: linear-gradient(180deg, var(--card-1) 0%, var(--card-2) 100%);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 18px var(--glow);
+  border-radius: 2px;
   padding: 1.5rem;
   scroll-margin-top: 1rem;
 }
@@ -151,8 +158,29 @@ main {
   color: var(--muted);
 }
 
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.portrait {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--accent-2);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.about p {
+  flex: 1 1 280px;
+}
+
 .placeholder {
-  color: var(--accent-2);
+  color: var(--accent-2) !important;
 }
 
 .site-footer {
@@ -171,11 +199,11 @@ main {
 }
 
 @keyframes sc {
-  0% { transform: scale(1); box-shadow: 1px 1px 0 salmon; color: #fff; }
-  25% { transform: rotate(-0.01turn) scale(1.15); box-shadow: -7px 7px 0 salmon; color: orange; }
-  50% { transform: scale(1.35); box-shadow: -10px -10px 0 salmon; color: #fff; background: rgb(30, 30, 30); }
-  75% { transform: rotate(0.01turn) scale(1.15); box-shadow: 7px -7px 0 salmon; color: orange; }
-  100% { transform: scale(1); box-shadow: 1px 1px 0 salmon; color: #fff; }
+  0% { transform: scale(1); box-shadow: 1px 1px 0 var(--accent); color: #fff; }
+  25% { transform: rotate(-0.01turn) scale(1.15); box-shadow: -7px 7px 0 var(--accent); color: var(--accent-2); }
+  50% { transform: scale(1.35); box-shadow: -10px -10px 0 var(--accent); color: #fff; background: var(--card-2); }
+  75% { transform: rotate(0.01turn) scale(1.15); box-shadow: 7px -7px 0 var(--accent); color: var(--accent-2); }
+  100% { transform: scale(1); box-shadow: 1px 1px 0 var(--accent); color: #fff; }
 }
 
 @media (prefers-reduced-motion: reduce) {
