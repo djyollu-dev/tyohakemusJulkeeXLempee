@@ -100,12 +100,16 @@ a:focus-visible {
   box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
   border-radius: 2px;
   width: 100%;
-  max-width: 450px;
-  min-height: 100px;
+  max-width: 520px;
+  min-height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 2.5rem;
+}
+
+.title h1 {
+  margin: 0;
 }
 
 .nav ul {
@@ -157,6 +161,28 @@ main {
   border-radius: 2px;
   padding: 1.5rem;
   scroll-margin-top: 1rem;
+}
+
+/* Leveämmät reunat tietokoneen näytöillä; mobiili pysyy ennallaan */
+@media (min-width: 768px) {
+  main {
+    max-width: 1000px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .card {
+    padding: 2.5rem 3.5rem;
+  }
+
+  .nav ul {
+    padding: 1.25rem 2rem;
+  }
+
+  .site-footer {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .card p {
