@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+
+const title = 'Työhakemus: oman median asiantuntija | Julkee x Lempee';
+const description =
+  'Hakemukseni oman median asiantuntijan tehtävään Julkee x Lempeelle: kuka olen, mitä olen tehnyt ja miksi juuri te.';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fi_FI" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Sixtyfour&family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
+
+    <header class="site-header">
+      <div class="title">
+        <h1>Työhakemus</h1>
+      </div>
+      <nav class="nav" aria-label="Päävalikko">
+        <ul>
+          <li><a href="#kuka-olen">Kuka olen</a></li>
+          <li><a href="#kokemus">Kokemus</a></li>
+          <li><a href="#miksi-te">Miksi te</a></li>
+          <li><a href="#yhteys">Yhteys</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="sisalto">
+      <section class="card" id="kuka-olen" aria-labelledby="kuka-olen-otsikko">
+        <h2 id="kuka-olen-otsikko">Kuka olen</h2>
+        <p class="placeholder">[Kuvaus itsestäsi lisätään myöhemmin.]</p>
+      </section>
+
+      <section class="card" id="kokemus" aria-labelledby="kokemus-otsikko">
+        <h2 id="kokemus-otsikko">Mitä olen tehnyt</h2>
+        <p class="placeholder">[Projektit, työkalut ja linkit lisätään myöhemmin.]</p>
+      </section>
+
+      <section class="card" id="miksi-te" aria-labelledby="miksi-te-otsikko">
+        <h2 id="miksi-te-otsikko">Miksi Julkee x Lempee</h2>
+        <p class="placeholder">[Perustelut lisätään myöhemmin.]</p>
+      </section>
+
+      <section class="card" id="yhteys" aria-labelledby="yhteys-otsikko">
+        <h2 id="yhteys-otsikko">Yhteystiedot</h2>
+        <p class="placeholder">[Yhteystiedot lisätään myöhemmin.]</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Tehty Astrolla, Claude Codella, GitHubilla ja Vercelillä.</p>
+    </footer>
+  </body>
+</html>
