@@ -144,30 +144,33 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
       <section class="card" id="yhteys" aria-labelledby="yhteys-otsikko">
         <h2 id="yhteys-otsikko">Yhteystiedot</h2>
-        <ul class="contact-list">
-          <li>
-            Puhelin:
-            <a class="doc-link" href="tel:+358406261645">+358 40 626 1645</a>
-          </li>
-          <li>
-            Sähköposti:
-            <a class="doc-link" href="mailto:djyollu@gmail.com">djyollu@gmail.com</a>
-          </li>
-          <li>
-            LinkedIn:
-            <a
-              class="doc-link"
-              href="https://www.linkedin.com/in/joel-korhonen-54aa4182/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >linkedin.com/in/joel-korhonen (avautuu uuteen välilehteen)</a>
-          </li>
-        </ul>
+        <p class="placeholder"></p>
+        <p class="placeholder"></p>
+        <p class="placeholder"></p>
+        <p class="placeholder"></p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Tehty Astrolla, Claude Codella, GitHubilla ja Vercelillä.</p>
+      <p>Tehty Astrolla, Claude Codella, GitHubilla ja Vercelillä. - Joel Korhonen 2026</p>
     </footer>
+
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Takaisin sivun alkuun" hidden>
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <path d="M12 5l-8 8h5v6h6v-6h5z" fill="currentColor" />
+      </svg>
+    </button>
+
+    <script>
+      const btn = document.getElementById('back-to-top');
+      if (btn) {
+        const toggle = () => {
+          btn.hidden = window.scrollY < 400;
+        };
+        window.addEventListener('scroll', toggle, { passive: true });
+        toggle();
+        btn.addEventListener('click', () => window.scrollTo({ top: 0 }));
+      }
+    </script>
   </body>
 </html>
