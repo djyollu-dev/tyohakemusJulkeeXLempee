@@ -48,7 +48,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <main id="sisalto">
       <section class="card" id="kuka-olen" aria-labelledby="kuka-olen-otsikko">
         <h2 id="kuka-olen-otsikko">Kuka olen</h2>
-        <p class="placeholder">[Kuvaus itsestäsi lisätään myöhemmin.]</p>
+        <div class="about">
+          <img
+            class="portrait"
+            src="/naama.webp"
+            alt="Hakijan kasvokuva"
+            width="1200"
+            height="1599"
+            fetchpriority="high"
+          />
+          <p class="placeholder">[Kuvaus itsestäsi lisätään myöhemmin.]</p>
+        </div>
       </section>
 
       <section class="card" id="kokemus" aria-labelledby="kokemus-otsikko">
